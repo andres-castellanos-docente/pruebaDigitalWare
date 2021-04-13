@@ -1,0 +1,33 @@
+.roles{
+    max-width: 800px;
+    padding-bottom: 80px;
+}
+
+:host ::ng-deep .ui-dialogDown.ui-dialog {
+    padding: 0.2em 0.2em!important;
+    min-height:200px!important;
+}
+
+@media screen and (min-width: 10px ) {
+    :host ::ng-deep .ui-dialogDown.ui-dialog {
+        width:100%!important;
+    }
+}
+
+@media screen and (min-width: 350px ) {
+    :host ::ng-deep .ui-dialogDown.ui-dialog {
+        width:350px!important;
+    }
+}
+
+
+:host ::ng-deep .ui-g{
+    display:block;
+}
+
+:host ::ng-deep .ui-dataview .ui-dataview-header{
+    padding:0;
+    border: 0;
+}
+
+

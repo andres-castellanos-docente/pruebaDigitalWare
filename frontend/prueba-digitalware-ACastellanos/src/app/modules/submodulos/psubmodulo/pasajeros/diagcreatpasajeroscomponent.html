@@ -1,0 +1,59 @@
+<div mat-dialog-title class="flex-container fontEst">
+    <label class="titlematd">Pasajeros</label>
+    <button class="titlebar-icon" (click)="Close(false)">
+        <mat-icon class="close-icon">close</mat-icon>
+    </button>
+</div>
+<form  [formGroup]="PasajeroForm" autocomplete="off" >
+    <div mat-dialog-content>
+        <div class="flexcontent">
+
+          <mat-form-field class="margright20" appearance="fill">
+            <mat-label>Tipo Documento</mat-label>
+            <mat-select  formControlName="tipdocumento" >
+              <mat-option  [value]=1>
+                Cedula Ciudadania
+              </mat-option>
+              <mat-option  [value]=2>
+                Cedula Extranjeria
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field  class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PasajeroForm.controls.identificacion.errors && PasajeroSubmited }">
+            <mat-label>Identificacion</mat-label>
+            <input formControlName="identificacion" maxLength="10" oninput="this.value=this.value.slice(0,this.maxLength)" type="number"  class="inputtext" matInput >
+          </mat-form-field>
+          <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PasajeroForm.controls.pnombre.errors && PasajeroSubmited }">
+            <mat-label>Primer Nombre</mat-label>
+            <input formControlName="pnombre" maxlength="80" type="text"  class="inputtext" matInput >
+          </mat-form-field>
+          <mat-form-field class="margright20" appearance="fill">
+            <mat-label>Segundo Nombre</mat-label>
+            <input formControlName="snombre" maxlength="80" type="text"  class="inputtext" matInput>
+          </mat-form-field>
+          <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PasajeroForm.controls.papellido.errors && PasajeroSubmited }">
+            <mat-label>Primer Apellido</mat-label>
+            <input formControlName="papellido" maxlength="80" type="text"  class="inputtext" matInput>
+          </mat-form-field>
+          <mat-form-field class="margright20" appearance="fill">
+            <mat-label>Segundo Apellido</mat-label>
+            <input formControlName="sapellido" maxlength="80" type="text"  class="inputtext" matInput>
+          </mat-form-field>
+          <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PasajeroForm.controls.email.errors && PasajeroSubmited }">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" maxlength="200" type="text"  class="inputtext" matInput>
+          </mat-form-field>
+          <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  PasajeroForm.controls.ncelular.errors && PasajeroSubmited }">
+            <mat-label>N Celular</mat-label>
+            <input formControlName="ncelular" maxLength="10" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="10" type="number"  class="inputtext" matInput>
+          </mat-form-field>
+        </div>
+    </div>
+    <div class="dcenter" mat-dialog-actions>
+        <button class="boton" (click)="onSubmitCrear()"> Guardar
+          <i class="fa fa-save"></i>
+        </button>
+        <button class="boton margleft20" (click)="Close(false)">Cancelar<i class="fa fa-ban"></i></button>
+    </div>
+</form>

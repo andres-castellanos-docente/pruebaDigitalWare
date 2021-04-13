@@ -1,0 +1,87 @@
+﻿<div class="content-sectionpadlow dcenter">
+  <div class="marginauto " [@subirAnimation]>
+    <button class="boton" (click)="createDialog()">Crear          <i class="fa fa-plus-square"></i></button>
+    <div class="marginauto contenwhitebot boxs">
+      <div class="marginauto">
+        <div style="max-width:600px" class="marginauto">
+          <div class="mat-table-scroll padtop" class="marginauto">
+            <table mat-table [dataSource]="dataSource">
+              <ng-container matColumnDef="editar">
+                <th style="max-width:60px" mat-header-cell *matHeaderCellDef> Editar</th>
+                <td style="max-width:60px" class="tcenter" mat-cell *matCellDef="let element;let i = index;">
+                  <button class="botons" (click)="editar(element, i)"><i class="fa fa-edit" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="tipdocumento">
+                <th style="max-width:80px" mat-header-cell *matHeaderCellDef>Tipo Documento</th>
+                <td style="max-width:80px" class="tcenter" mat-cell
+                    *matCellDef="let element"><label *ngIf="element.tipdocumento === 1">Cédula de Ciudadania</label> <label *ngIf="element.tipdocumento === 2">Cédula de Extranjería</label> </td>
+              </ng-container>
+              <ng-container matColumnDef="identificacion">
+                <th style="max-width:100px" mat-header-cell *matHeaderCellDef>Identificacion</th>
+                <td style="max-width:100px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.identificacion}} </td>
+              </ng-container>
+
+
+
+              <ng-container  matColumnDef="pnombre">
+                <th style="max-width:100px" mat-header-cell *matHeaderCellDef>Primer Nombre</th>
+                <td style="max-width:100px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.pnombre}} </td>
+              </ng-container>
+              <ng-container matColumnDef="snombre">
+                <th style="max-width:100px" mat-header-cell *matHeaderCellDef> Segundo Nombre</th>
+                <td style="max-width:100px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.snombre}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="papellido">
+                <th style="max-width:100px" mat-header-cell *matHeaderCellDef> Primer Apellido</th>
+                <td style="max-width:100px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.papellido}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="sapellido">
+                <th style="max-width:100px" mat-header-cell *matHeaderCellDef> Segundo Apellido</th>
+                <td style="max-width:100px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.sapellido}} </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="email">
+                <th style="max-width:200px" mat-header-cell *matHeaderCellDef> Email</th>
+                <td style="max-width:200px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.email}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="ncelular">
+                <th style="max-width:100px" mat-header-cell *matHeaderCellDef> NCelular</th>
+                <td style="max-width:100px" class="tcenter" mat-cell
+                    *matCellDef="let element"> {{element.ncelular}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="eliminar">
+                <th style="max-width:60px" mat-header-cell *matHeaderCellDef> Eliminar</th>
+                <td style="max-width:60px" class="tcenter" mat-cell *matCellDef="let element;let i = index;">
+                  <button class="botons" (click)="eliminar(element, i)"><i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </ng-container>
+
+
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <div *ngIf="dataSource && dataSource.data.length === 0" class="marginauto">No se encontraron registros</div>
+          </div>
+          <mat-paginator class="matselect" [pageSizeOptions]="[5, 10, 20]"
+                         showFirstLastButtons></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

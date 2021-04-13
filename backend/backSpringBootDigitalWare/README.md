@@ -10,7 +10,7 @@ Se debe crear el  usuario de base de datos
 se debe iniciar el servidor para que jpa cree las tablas(validar parametros de conexion en archivo application.properties de springboot)
 
 
-detener servidor y ejecutar el scriot para crear el usuario restfull
+detener servidor y ejecutar el script para crear el usuario restfull
 
 
 se debe crear un usuario en la tabla usuariosrest
