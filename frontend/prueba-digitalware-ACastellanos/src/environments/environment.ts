@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://192.168.20.20:9090/',
+  apiUrl: 'http://127.0.0.1:9090/',
   urlLogin: 'api/auth/signin'
 };
 
