@@ -29,7 +29,6 @@ public class PasajerosController {
         return pasajService.crearEdPasajero(client);
     }
 
-
     @GetMapping("/pasaj")
     public ResponseEntity<PasajerosListResponse> getPasajeros() {
         return pasajService.leerPasajeros();
